@@ -1,0 +1,10 @@
+release/chatserver.o
+release/clienthandler.o
+release/main.o
+release/mainwindow.o
+release/protocol.o
+release/server.o
+release/moc_chatserver.o
+release/moc_clienthandler.o
+release/moc_mainwindow.o
+release/moc_server.o
