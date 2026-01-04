@@ -1,0 +1,32 @@
+<RCC>
+  <qresource prefix="/">
+    <!-- 图标资源 -->
+    <file alias="images/logo.png">resources/images/logo.png</file>
+    <file alias="images/default_avatar.png">resources/images/default_avatar.png</file>
+    <file alias="images/contacts.png">resources/images/contacts.png</file>
+    <file alias="images/groups.png">resources/images/groups.png</file>
+    <file alias="images/settings.png">resources/images/settings.png</file>
+    <file alias="images/online.png">resources/images/online.png</file>
+    <file alias="images/offline.png">resources/images/offline.png</file>
+    <file alias="images/busy.png">resources/images/busy.png</file>
+    <file alias="images/away.png">resources/images/away.png</file>
+    
+    <!-- 样式表 -->
+    <file alias="styles/default.qss">resources/styles/default.qss</file>
+    
+    <!-- 默认头像 -->
+    <file alias="images/avatar1.png">resources/images/avatars/avatar1.png</file>
+    <file alias="images/avatar2.png">resources/images/avatars/avatar2.png</file>
+    <file alias="images/avatar3.png">resources/images/avatars/avatar3.png</file>
+    <file alias="images/avatar4.png">resources/images/avatars/avatar4.png</file>
+    
+    <!-- 表情包 -->
+    <file alias="images/emoji/smile.png">resources/images/emoji/smile.png</file>
+    <file alias="images/emoji/cry.png">resources/images/emoji/cry.png</file>
+    <file alias="images/emoji/angry.png">resources/images/emoji/angry.png</file>
+    
+    <!-- 消息气泡 -->
+    <file alias="images/bubble_left.png">resources/images/bubble_left.png</file>
+    <file alias="images/bubble_right.png">resources/images/bubble_right.png</file>
+  </qresource>
+</RCC>

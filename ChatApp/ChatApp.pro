@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui network sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,15 +10,60 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    src/core/application.cpp \
+    src/gui/loginwidget.cpp \
+    src/gui/chatwidget.cpp \
+    src/gui/contactwidget.cpp \
+    src/models/chatmodel.cpp \
+    src/models/contactmodel.cpp \
+    src/models/messageitemdelegate.cpp \
+    src/network/networkmanager.cpp \
+    src/network/tcpclient.cpp \
+    src/database/dbmanager.cpp \
+    src/utils/global.cpp \
+    src/utils/logger.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    src/core/application.h \
+    src/gui/loginwidget.h \
+    src/gui/chatwidget.h \
+    src/gui/contactwidget.h \
+    src/models/chatmodel.h \
+    src/models/contactmodel.h \
+    src/models/messageitemdelegate.h \
+    src/network/networkmanager.h \
+    src/network/tcpclient.h \
+    src/database/dbmanager.h \
+    src/utils/logger.h \
+    src/utils/global.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    src/gui/loginwidget.ui \
+    src/gui/chatwidget.ui \
+    src/gui/contactwidget.ui
 
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+# 资源文件
+RESOURCES += \
+    src/rescources/resources.qrc
+
+# 包含路径
+INCLUDEPATH += src
+
+# 编译输出目录
+DESTDIR = $$OUT_PWD/bin
+OBJECTS_DIR = $$OUT_PWD/obj
+MOC_DIR = $$OUT_PWD/moc
+RCC_DIR = $$OUT_PWD/rcc
+UI_DIR = $$OUT_PWD/ui
+
+# 部署
+win32: {
+    target.path = $$[QT_INSTALL_EXAMPLES]/ChatApp
+    INSTALLS += target
+}
+
+DISTFILES += \
+    styles/default.qss
