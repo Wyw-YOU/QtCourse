@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddFriend</class>
+ <widget class="QWidget" name="AddFriend">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>505</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Microsoft YaHei</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>471</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLineEdit" name="account_edit">
+        <property name="minimumSize">
+         <size>
+          <width>300</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>300</width>
+          <height>35</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="searchBtn">
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Microsoft YaHei</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	border-radius:8px;
+	background-color: rgb(11, 184, 243);
+}</string>
+        </property>
+        <property name="text">
+         <string>搜索</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="headimg_label">
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>120</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>120</width>
+          <height>120</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>头像</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="account_label">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+	border-color: rgb(0, 0, 0);
+	border: 2px solid black;
+	border-radius:12px;
+}</string>
+          </property>
+          <property name="text">
+           <string>账号：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="name_label">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+	border-color: rgb(0, 0, 0);
+	border: 2px solid black;
+	border-radius:12px;
+}</string>
+          </property>
+          <property name="text">
+           <string>昵称：</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="addBtn">
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Microsoft YaHei</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-color: rgb(11, 184, 243);
+	border-radius:12px;
+}</string>
+        </property>
+        <property name="text">
+         <string>添加</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

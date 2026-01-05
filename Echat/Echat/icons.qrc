@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>icons/echat.png</file>
+        <file>icons/close.png</file>
+        <file>icons/close2.png</file>
+        <file>icons/search.png</file>
+        <file>icons/add.png</file>
+        <file>icons/chat_unactive.png</file>
+        <file>icons/chat_active.png</file>
+        <file>icons/address_list_active.png</file>
+        <file>icons/address_list_unactive.png</file>
+        <file>icons/send_file.png</file>
+        <file>icons/send_file_pressed.png</file>
+        <file>icons/send_img.png</file>
+        <file>icons/send_img_pressed.png</file>
+        <file>icons/notice_active.png</file>
+        <file>icons/notice_unactive.png</file>
+        <file>icons/status_online.png</file>
+        <file>icons/status_outline.png</file>
+    </qresource>
+</RCC>

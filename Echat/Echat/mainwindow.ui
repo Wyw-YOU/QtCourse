@@ -1,0 +1,1523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QWidget" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1435</width>
+    <height>795</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Echat</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="icons.qrc">
+    <normaloff>:/new/prefix1/icons/echat.png</normaloff>:/new/prefix1/icons/echat.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,9,2">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>9</number>
+   </property>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="leftMargin">
+      <number>15</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="headimgBtn">
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>51</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>51</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	background-color: rgba(255, 255, 255, 0);
+	background-position: center;
+	border-radius:12px;
+}
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="chatBtn">
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>51</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>51</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-image: url(:/new/prefix1/icons/chat_unactive.png);
+	background-color: rgba(255, 255, 255, 0);
+	background-position: center;
+}
+
+QPushButton:hover {
+	border-image: url(:/new/prefix1/icons/chat_unactive.png);
+	background-color: rgba(200, 200, 200, 100);
+	background-position: center;
+	border-radius:12px;
+
+}
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="addressBtn">
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>51</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>51</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-image: url(:/new/prefix1/icons/address_list_unactive.png);
+	background-color: rgba(255, 255, 255, 0);
+	background-position: center;
+}
+
+QPushButton:hover {
+	border-image: url(:/new/prefix1/icons/address_list_unactive.png);
+	background-color: rgba(200, 200, 200, 100);
+	background-position: center;
+	border-radius:12px;
+
+}
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="noticeBtn">
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>51</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>51</width>
+         <height>51</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border-image: url(:/new/prefix1/icons/notice_unactive.png);
+	background-color: rgba(255, 255, 255, 0);
+	background-position: center;
+}
+
+QPushButton:hover {
+	border-image: url(:/new/prefix1/icons/notice_active.png);
+	background-color: rgba(200, 200, 200, 100);
+	background-position: center;
+	border-radius:12px;
+
+}
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="chat_page">
+      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,1">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QGroupBox" name="groupBox_2">
+             <property name="title">
+              <string/>
+             </property>
+             <widget class="QLineEdit" name="searchEdit">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>241</width>
+                <height>31</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="cursorPosition">
+               <number>0</number>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>30</width>
+                <height>30</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="icons.qrc">:/new/prefix1/icons/search.png</pixmap>
+              </property>
+             </widget>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="addBtn">
+             <property name="minimumSize">
+              <size>
+               <width>31</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>31</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="icons.qrc">
+               <normaloff>:/new/prefix1/icons/add.png</normaloff>:/new/prefix1/icons/add.png</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QListWidget" name="listWidget">
+           <property name="styleSheet">
+            <string notr="true">QListWidget{
+	background-color: rgb(237, 237, 237);
+    border-top: 1px solid #cccccc;  
+    border-right: 1px solid #cccccc;  
+    border-bottom: 1px solid #cccccc; 
+    border-left: 1px solid #cccccc; 
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="styleSheet">
+          <string notr="true">QGroupBox{
+	border-color: rgba(0, 0, 0, 0);
+	background-color: rgb(237, 237, 237);
+}</string>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,4,0,1,0">
+          <item>
+           <widget class="QLabel" name="friendname_label">
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>好友昵称</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QListWidget" name="chatWidget">
+            <property name="styleSheet">
+             <string notr="true">QListWidget{
+	background-color: rgb(237, 237, 237);
+    border-top: 1px solid #cccccc;  
+    border-right: 1px solid #cccccc;  
+    border-bottom: 1px solid #cccccc; 
+    border-left: 0px; 
+}</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QPushButton" name="imgsend_Btn">
+              <property name="minimumSize">
+               <size>
+                <width>34</width>
+                <height>34</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>34</width>
+                <height>34</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	border-image: url(:/new/prefix1/icons/send_img.png);
+	background-color: rgba(0, 0, 0, 0);
+}
+
+QPushButton:hover{
+	border-image: url(:/new/prefix1/icons/send_img_pressed.png);
+	background-color: rgba(0, 0, 0, 0);
+}</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="filesend_Btn">
+              <property name="minimumSize">
+               <size>
+                <width>38</width>
+                <height>38</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>38</width>
+                <height>38</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	border-image: url(:/new/prefix1/icons/send_file.png);
+	background-color: rgba(0, 0, 0, 0);
+}
+
+QPushButton:hover{
+	border-image: url(:/new/prefix1/icons/send_file_pressed.png);
+	background-color: rgba(0, 0, 0, 0);
+}</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="msgEdit">
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QTextEdit{
+	border:none;
+	background-color: rgb(237, 237, 237);
+}</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="sendBtn">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>60</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>40</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Microsoft YaHei</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="layoutDirection">
+               <enum>Qt::LeftToRight</enum>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	border-radius:6px;
+	background-color: rgb(225, 225, 225);
+	color: rgb(157, 157, 157);
+}</string>
+              </property>
+              <property name="text">
+               <string>发送</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="friend_page">
+      <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="0,1">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0,0">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QGroupBox" name="groupBox_3">
+             <property name="title">
+              <string/>
+             </property>
+             <widget class="QLineEdit" name="searchEdit_2">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>221</width>
+                <height>31</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="cursorPosition">
+               <number>0</number>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_3">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>30</width>
+                <height>30</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="icons.qrc">:/new/prefix1/icons/search.png</pixmap>
+              </property>
+             </widget>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="addBtn_2">
+             <property name="minimumSize">
+              <size>
+               <width>31</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>31</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="icons.qrc">
+               <normaloff>:/new/prefix1/icons/add.png</normaloff>:/new/prefix1/icons/add.png</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_5">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="title">
+            <string/>
+           </property>
+           <widget class="QWidget" name="horizontalLayoutWidget_5">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>-10</y>
+              <width>211</width>
+              <height>61</height>
+             </rect>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_13">
+             <property name="spacing">
+              <number>4</number>
+             </property>
+             <item>
+              <widget class="QPushButton" name="friend_switch_btn">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>22</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Microsoft YaHei</family>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+	background-color: rgb(245, 250, 255);
+	color: rgb(86, 208, 250);
+	border-radius:5px;
+}
+</string>
+               </property>
+               <property name="text">
+                <string>好友</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="group_switch_btn">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>22</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>22</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Microsoft YaHei</family>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+	background-color: rgb(235, 240, 245);
+	color: rgb(99, 122, 137);
+	border-radius:5px;
+}
+</string>
+               </property>
+               <property name="text">
+                <string>群聊</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="friend_list">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QListWidget{
+	background-color: rgb(237, 237, 237);
+    border-top: 1px solid #cccccc;  
+    border-right: 1px solid #cccccc;  
+    border-bottom: 1px solid #cccccc; 
+    border-left: 1px solid #cccccc; 
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="styleSheet">
+          <string notr="true">QGroupBox{
+	border-color: rgba(0, 0, 0, 0);
+	background-color: rgb(237, 237, 237);
+}</string>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QLabel" name="friendimg_label">
+              <property name="minimumSize">
+               <size>
+                <width>240</width>
+                <height>240</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>240</width>
+                <height>240</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>头像</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <widget class="QLabel" name="friendname_label_2">
+              <property name="minimumSize">
+               <size>
+                <width>350</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>350</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Microsoft YaHei</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+	border-color: rgb(0, 0, 0);
+	border: 2px solid black;
+	border-radius:12px;
+}</string>
+              </property>
+              <property name="text">
+               <string>昵称：</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <item>
+             <widget class="QLabel" name="friendaccount_label">
+              <property name="minimumSize">
+               <size>
+                <width>350</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>350</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Microsoft YaHei</family>
+                <pointsize>12</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+	border-color: rgb(0, 0, 0);
+	border: 2px solid black;
+	border-radius:12px;
+}</string>
+              </property>
+              <property name="text">
+               <string>账号：</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="open_chat_btn">
+              <property name="minimumSize">
+               <size>
+                <width>110</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>110</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Microsoft YaHei</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	background-color: rgb(1, 188, 250);
+	border-radius:12px;
+	color: rgb(255, 255, 255);
+}</string>
+              </property>
+              <property name="text">
+               <string>发送信息</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="delete_friend_btn">
+              <property name="minimumSize">
+               <size>
+                <width>110</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>110</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Microsoft YaHei</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	border-radius:12px;
+	color: rgb(255, 255, 255);
+	background-color: rgb(252, 14, 0);
+}</string>
+              </property>
+              <property name="text">
+               <string>删除好友</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="group_page">
+      <layout class="QHBoxLayout" name="horizontalLayout_20" stretch="0,1">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_7" stretch="0,0,0">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_18">
+           <item>
+            <widget class="QGroupBox" name="groupBox_7">
+             <property name="title">
+              <string/>
+             </property>
+             <widget class="QLineEdit" name="searchEdit_3">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>221</width>
+                <height>31</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="cursorPosition">
+               <number>0</number>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_4">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>30</width>
+                <height>30</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="icons.qrc">:/new/prefix1/icons/search.png</pixmap>
+              </property>
+             </widget>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="addBtn_3">
+             <property name="minimumSize">
+              <size>
+               <width>31</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>31</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="icons.qrc">
+               <normaloff>:/new/prefix1/icons/add.png</normaloff>:/new/prefix1/icons/add.png</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_8">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="title">
+            <string/>
+           </property>
+           <widget class="QWidget" name="horizontalLayoutWidget_6">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>-10</y>
+              <width>211</width>
+              <height>61</height>
+             </rect>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_19">
+             <property name="spacing">
+              <number>4</number>
+             </property>
+             <item>
+              <widget class="QPushButton" name="friend_switch_btn_2">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>22</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Microsoft YaHei</family>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+	background-color: rgb(235, 240, 245);
+	color: rgb(99, 122, 137);
+	border-radius:5px;
+}
+</string>
+               </property>
+               <property name="text">
+                <string>好友</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="group_switch_btn_2">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>22</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>22</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Microsoft YaHei</family>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+	background-color: rgb(245, 250, 255);
+	color: rgb(86, 208, 250);
+	border-radius:5px;
+}
+</string>
+               </property>
+               <property name="text">
+                <string>群聊</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="group_list">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QListWidget{
+	background-color: rgb(237, 237, 237);
+    border-top: 1px solid #cccccc;  
+    border-right: 1px solid #cccccc;  
+    border-bottom: 1px solid #cccccc; 
+    border-left: 1px solid #cccccc; 
+	border-radius:12px;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_6">
+         <property name="styleSheet">
+          <string notr="true">QGroupBox{
+	border-color: rgba(0, 0, 0, 0);
+	background-color: rgb(237, 237, 237);
+}</string>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_14">
+            <item>
+             <widget class="QLabel" name="groupimg_label">
+              <property name="minimumSize">
+               <size>
+                <width>240</width>
+                <height>240</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>240</width>
+                <height>240</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>头像</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_15">
+            <item>
+             <widget class="QLabel" name="groupname_label">
+              <property name="minimumSize">
+               <size>
+                <width>350</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>350</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Microsoft YaHei</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+	border-color: rgb(0, 0, 0);
+	border: 2px solid black;
+	border-radius:12px;
+}</string>
+              </property>
+              <property name="text">
+               <string>群名称：</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_16">
+            <item>
+             <widget class="QLabel" name="groupaccount_label">
+              <property name="minimumSize">
+               <size>
+                <width>350</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>350</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Microsoft YaHei</family>
+                <pointsize>12</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+	border-color: rgb(0, 0, 0);
+	border: 2px solid black;
+	border-radius:12px;
+}</string>
+              </property>
+              <property name="text">
+               <string>账号：</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_21">
+            <item>
+             <widget class="QLabel" name="group_member_count_label">
+              <property name="minimumSize">
+               <size>
+                <width>350</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>350</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Microsoft YaHei</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+	border-color: rgb(0, 0, 0);
+	border: 2px solid black;
+	border-radius:12px;
+}</string>
+              </property>
+              <property name="text">
+               <string>群成员：</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_17">
+            <item>
+             <spacer name="horizontalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="open_chat_btn_2">
+              <property name="minimumSize">
+               <size>
+                <width>110</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>110</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Microsoft YaHei</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	background-color: rgb(1, 188, 250);
+	border-radius:12px;
+	color: rgb(255, 255, 255);
+}</string>
+              </property>
+              <property name="text">
+               <string>发送信息</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_7">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="delete_friend_btn_2">
+              <property name="minimumSize">
+               <size>
+                <width>110</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>110</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Microsoft YaHei</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	border-radius:12px;
+	color: rgb(255, 255, 255);
+	background-color: rgb(252, 14, 0);
+}</string>
+              </property>
+              <property name="text">
+               <string>退出群聊</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_8">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="notice_page">
+      <layout class="QHBoxLayout" name="horizontalLayout_22" stretch="0,0">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="font">
+            <font>
+             <family>Microsoft YaHei</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>好友通知</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="friend_notice_list">
+           <property name="maximumSize">
+            <size>
+             <width>550</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QListWidget{
+	background-color: rgb(237, 237, 237);
+    border-top: 1px solid #cccccc;  
+    border-right: 1px solid #cccccc;  
+    border-bottom: 1px solid #cccccc; 
+    border-left: 1px solid #cccccc; 
+	border-radius:12px;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_9">
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>群通知</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="group_notice_list">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QListWidget{
+	background-color: rgb(237, 237, 237);
+    border-top: 1px solid #cccccc;  
+    border-right: 1px solid #cccccc;  
+    border-bottom: 1px solid #cccccc; 
+    border-left: 1px solid #cccccc; 
+	border-radius:12px;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_10">
+     <item>
+      <spacer name="verticalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>10</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="group_member_label">
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>群聊成员 </string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListWidget" name="users_in_group_list">
+       <property name="styleSheet">
+        <string notr="true">QListWidget{
+	background-color: rgb(237, 237, 237);
+    border-top: 1px solid #cccccc;  
+    border-right: 1px solid #cccccc;  
+    border-bottom: 1px solid #cccccc; 
+    border-left: 1px solid #cccccc; 
+}</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>
